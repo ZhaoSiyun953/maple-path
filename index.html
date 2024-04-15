@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ZIM - MaplePath - Code Creativity</title>
+
+        <script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/zim_9.2.0.js"></script>
+
+
+
+<!-- bubble -->
+<script src='https://zimjs.org/cdn/1.3.2/createjs.js'></script>
+<script src='https://zimjs.org/cdn/cat/02/zim.js'></script>
+<script src='https://zimjs.org/cdn/pizzazz_03.js'></script>
+<script src='https://zimjs.org/cdn/icon6.js'></script>
+
+
+
+<!-- disappear -->
+<script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
+<script src="https://zimjs.org/cdn/cat/03/zim.js"></script>
+<script src="https://zimjs.org/cdn/icon6.js"></script>
+
+
+        <script type="module">
+            import zim from "https://zimjs.org/cdn/016/zim";
+
+            const assets = ["s.png", "s.json","robotJson.png", "robotJson.json","guideJson.png", "guideJson.json","logoAnimate.png", "logoAnimate.json"];
+const path = "assets/";
+
+
+
+const frame = new Frame(FIT, 1920, 954, light, dark, ready, assets, path);
+            function ready() {
+               
+
+               const logoAnimate =new Sprite({json:"logoAnimate.json"}) 
+        .run({
+            time:4,
+            loop:true
+        }).sca(.5).reg(CENTER);
+        
+        const chat =new Pic('assets/chat.png');
+
+        const mapText =new Pic('assets/talk.png');
+    
+            
+               const container = new Container().centerReg().center();
+
+                  const background = new Pic("assets/bg1.png").reg(CENTER).center(container); // assuming loaded in Frame
+                  const talk = new Pic("assets/talk.png").sca(.9).reg(CENTER).mov(0,-50).addTo(container).mov(0,100); 
+                  const guide =new Sprite({json:"guideJson.json"}) 
+        .run({
+            time:3,
+            loop:true
+        }).sca(.6).pos(595,7,container);
+                  const welcomeText = new Pic("assets/welcomeText.png").sca(.9).reg(CENTER).mov(0,30).addTo(container); 
+
+                  
+let microbutton = new Button(200, 60,'music','#6db6bd').pos(20, 20,RIGHT,BOTTOM);
+          microbutton.on("click", () => {
+
+            new Aud({file:"bgMusic.mp3", loop:true}).play();
+
+          });
+
+
+                  const next =new Pic("assets/next.png").reg(CENTER).pos(-10,160,CENTER,BOTTOM);
+                  next.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                     welcomeText.off();
+                     welcomeText.removeFrom();
+
+                     next.off();
+                     next.removeFrom();
+
+                     const guide = new Pic("assets/guide.png").sca(.9).reg(CENTER).mov(0,60).addTo(container); 
+
+                     const closeButton=new Pic("assets/closeButton.png").sca(.6).reg(CENTER).mov(325,-173).addTo(container);
+                     closeButton.on("click",()=>{
+                        new Aud("assets/clickMusic.mp3").play();
+
+                     page1();
+                  })
+                  });
+                 
+                  const maple= new Pic("assets/maple.png").reg(CENTER).center(container);
+                  
+
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+
+                        page1();
+                     })
+
+                     
+         
+
+                // Given F, S, W, H or frame, stage, stageW, stageH
+                function page1(){
+
+
+
+
+                        const background = new Pic("assets/bg1.png").reg(CENTER).center(); // assuming loaded in Frame
+                        const dbclickDoor= new Pic("assets/dbclickDoor.png").sca(.9).reg(CENTER).pos(250,130,RIGHT,BOTTOM);
+
+                const boy=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(1.1).reg(CENTER).pos(60,20,LEFT,BOTTOM).mov(200,400).drag().top();
+        
+
+// const scroller = new Scroller(background);
+const maple= new Pic("assets/maple.png").reg(CENTER).center();
+
+
+
+let microbutton = new Button(200, 60,'music','#6db6bd').pos(20, 20,RIGHT,BOTTOM);
+          microbutton.on("click", () => {
+
+            new Aud({file:"bgMusic.mp3", loop:true}).play();
+
+          });
+
+
+const leaveAnimate= new Pic("assets/leaveAnimate.png").reg(CENTER).pos(-30,-30).animate({
+      props:{x:1400, y:1000,rotation:290},
+      wait:.6,
+      time:1.3,
+   });
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy,
+   type:"keydown",
+flip:HORIZONTAL,
+
+//    axis:HORIZONTAL,
+   // allow press on Scroller backings
+//    mousedownIncludes:[scroller.backing1, scroller.backing2],
+   speed:10,
+   boundary:new Boundary(210,610,1220,40) 
+});
+              
+
+const door= new Rectangle(70,95,pink).pos(490,310,RIGHT,BOTTOM).alp(0);
+
+boy.on("click", ()=>{
+   new Aud("assets/clickMusic.mp3").play();
+   if (boy.hitTestBounds(door)) {
+      S.removeChild(door);
+      S.update();
+      page2();
+   }
+})
+
+
+                };
+
+               //  page1();
+
+
+               
+                function page2(){
+
+                  mapText
+                    const bg3 = new Pic("assets/bg3.png").addTo(); // assuming loaded in Frame
+                    const schoolsOthers= new Pic("assets/schoolsOthers.png").reg(CENTER).pos(190,135,LEFT,TOP);
+
+                    
+                const school1= new Pic("assets/school1.png").reg(CENTER).pos(270,1,RIGHT,BOTTOM);
+ 
+
+                const school2= new Pic("assets/school2.png").reg(CENTER).pos(615,70,RIGHT,BOTTOM);
+
+
+                const school3= new Pic("assets/school3.png").reg(CENTER).pos(435,95,RIGHT,TOP);
+
+
+                const school4= new Pic("assets/school4.png").reg(CENTER).pos(1005,365,RIGHT,TOP);
+
+                logoAnimate.pos(10,10,LEFT,BOTTOM).on("click", function() {
+                  new Aud("assets/clickMusic.mp3").play();
+   zgo("https://ashleyimm.com/maplepath/robot/robot.html", "_blank");
+});
+
+
+chat.pos(10,40,LEFT,BOTTOM);
+
+
+
+const LearnAnimation=new Pic("assets/LearnAnimation.png").reg(CENTER).pos(36,36,RIGHT,TOP);
+LearnAnimation.on("click",()=>{
+   new Aud("assets/clickMusic.mp3").play();
+   school2.reg(CENTER).pos(635,115,RIGHT,BOTTOM);
+   //sheridanLable.reg(CENTER).addTo(school2).pos(670,80,RIGHT,BOTTOM);
+   // sheridanLable.reg(CENTER).pos(10,-35,CENTER,BOTTOM,school2)
+
+   schoolsOthers.removeFrom();
+   school1.removeFrom();
+   school3.removeFrom();
+   school4.removeFrom();
+})
+
+const WarmClimate=new Pic("assets/WarmClimate.png").reg(CENTER).pos(36,130,RIGHT,TOP);
+WarmClimate.on("click",()=>{
+   new Aud("assets/clickMusic.mp3").play();
+   school1.reg(CENTER).pos(400,1,RIGHT,BOTTOM);
+   // STClair.reg(CENTER).pos(125,169,CENTER,BOTTOM,school1);
+   schoolsOthers.removeFrom();
+   school2.removeFrom();
+   school3.removeFrom();
+   school4.removeFrom();
+})
+
+const Prosperousarea=new Pic("assets/Prosperousarea.png").reg(CENTER).pos(36,224,RIGHT,TOP);
+Prosperousarea.on("click",()=>{
+   new Aud("assets/clickMusic.mp3").play();
+   school3.reg(CENTER).pos(655,95,RIGHT,TOP);
+   // Centannial.reg(CENTER).pos(329,94,CENTER,BOTTOM,school3);
+   schoolsOthers.removeFrom();
+   school2.removeFrom();
+   school1.removeFrom();
+   school4.removeFrom();
+})
+const Morescores=new Pic("assets/Morescores.png").reg(CENTER).pos(36,318,RIGHT,TOP);
+Morescores.on("click",()=>{
+   new Aud("assets/clickMusic.mp3").play();
+   school4.reg(CENTER).pos(1025,395,RIGHT,TOP);
+   // Cones.reg(CENTER).pos(10,-49,CENTER,BOTTOM,school4);
+   schoolsOthers.removeFrom();
+   school2.removeFrom();
+   school1.removeFrom();
+   school3.removeFrom();
+})
+
+//boy control
+const boy2=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(.6).reg(CENTER).pos(40,40,LEFT,TOP).drag();
+        
+
+
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy2,
+   type:"keydown",
+flip:HORIZONTAL,
+//    axis:HORIZONTAL,
+   // allow press on Scroller backings
+//    mousedownIncludes:[scroller.backing1, scroller.backing2],
+   speed:10,
+   boundary:new Boundary(0,0,W,H) 
+});
+
+                
+                boy2.on("click", ()=>{
+   if (boy2.hitTestBounds(school1)) {
+      new Aud("assets/clickMusic.mp3").play();
+      S.removeChild(school1);
+      S.update();
+      School1();
+   }
+   if (boy2.hitTestBounds(school2)) {
+      new Aud("assets/clickMusic.mp3").play();
+      S.removeChild(school2);
+      S.update();
+      School2();
+   }
+   if (boy2.hitTestBounds(school3)) {
+      new Aud("assets/clickMusic.mp3").play();
+      S.removeChild(school3);
+      S.update();
+      School3();
+   }
+   if (boy2.hitTestBounds(school4)) {
+      new Aud("assets/clickMusic.mp3").play();
+      S.removeChild(school4);
+      S.update();
+      School4();
+   }
+})
+
+const choose =new Pic('assets/choose.png').pos(10,40,RIGHT,BOTTOM);
+
+
+
+const chooseLogo = new Pic('assets/questionMark.png').sca(.3).reg(CENTER).pos(1650,730).animate({
+      props:{rotation:60},
+      loop:true,
+      rewind:true,
+      time:2,
+
+   })
+   .on("click", ()=>{
+      new Aud("assets/clickMusic.mp3").play();
+   const visitWeb =new Pic('assets/visitWeb.png').centerReg();
+   const visit =new Pic('assets/visit.png').centerReg().mov(0,150);
+
+const closeButton=new Pic("assets/closeButton.png").centerReg().sca(.7).mov(380,-260);
+
+visit.on("click", function() {
+   new Aud("assets/clickMusic.mp3").play();
+   zgo("https://www.chenfei.cn/map.php", "_blank");
+});
+
+closeButton.on("click",()=>{
+   new Aud("assets/clickMusic.mp3").play();
+visitWeb.off();
+visitWeb.removeFrom();
+visit.off();
+visit.removeFrom();
+closeButton.off();
+closeButton.removeFrom();
+
+})
+
+
+})
+
+                }
+                
+
+                               
+                function School1(){
+
+
+         
+
+
+
+                    const bg2 = new Pic("assets/bg2.png").addTo(); // assuming loaded in Frame
+                    const bg2Logo =new Pic("assets/bg2Logo.png").pos(170,540,RIGHT,TOP).reg(100,160)
+                    .animate({
+   props:{scale:1.2},
+   rewind:true,
+   loop:true
+})
+
+
+                    const StClairCollege = new Pic("assets/StClairCollege.png").pos(20,20,LEFT,TOP);
+                const robot= new Sprite({json:"robotJson.json"}) 
+        .run({
+            time:3,
+            loop:true
+        }).sca(.5).reg(CENTER).pos(680,240,LEFT,BOTTOM);
+                // const boy3= new Pic("assets/boy2.png").sca(.6).sca(-1,1).pos(200,200,RIGHT,TOP);
+                const back=new Pic("assets/back.png").reg(CENTER).pos(50,50,RIGHT,BOTTOM);
+                back.on("click", () => {
+                  new Aud("assets/clickMusic.mp3").play();
+                    page2();
+                    S.update();
+                    });
+
+                    logoAnimate.pos(10,10,LEFT,BOTTOM).top().on("click", function() {
+                     new Aud("assets/clickMusic.mp3").play();
+   zgo("https://ashleyimm.com/maplepath/robot/robot.html", "_blank");
+});
+
+chat.pos(10,40,LEFT,BOTTOM);
+
+
+const boy3=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(.6).reg(CENTER).pos(60,320,LEFT,TOP).drag().top();
+        
+
+
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy3,
+   type:"keydown",
+   flip:HORIZONTAL,
+//    axis:HORIZONTAL,
+   // allow press on Scroller backings
+//    mousedownIncludes:[scroller.backing1, scroller.backing2],
+   speed:10,
+   boundary:new Boundary(0,0,W,H) 
+});
+
+                
+boy3.on("click", ()=>{
+   if (boy3.hitTestBounds(robot)) {
+      new Aud("assets/clickMusic.mp3").play();
+    //   S.removeChild(robot);
+    const talk= new Pic("assets/talkBacteria.png").centerReg();
+
+    	// masking with a Blob
+const image = new Pic("assets/bacteria.png").centerReg();
+const blob = new Circle({color:faint,radius:120,borderColor:black,borderWidth:10}).center().drag(); // this is draggable by default
+// new Circle(50, red)
+image.setMask(blob);
+
+      S.update();
+
+
+    const closeButton=new Pic("assets/closeButton.png").sca(.7).reg(CENTER).pos(520,170,RIGHT,TOP);
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                    //  container.removeFrom();
+                    //  container.off();
+                     image.off();
+                     image.removeFrom();
+                     blob.off();
+                     blob.removeFrom();
+                     talk.removeFrom();
+
+                      closeButton.removeFrom();
+                     
+                  })
+
+
+
+    //   page2();
+   };
+
+   if (boy3.hitTestBounds(bg2Logo)) {
+    //   S.removeChild(robot);
+   //  const popUp1= new Pic("assets/ST.png").centerReg();
+
+    const popUp1= new Pic("assets/ST.png").reg(CENTER).pos(0,1000).animate({
+      props:{y:478},
+      wait:.2,
+      time:.5,
+   });
+
+  
+    const closeButton=new Pic("assets/closeButton.png").sca(.7).alp(0).reg(CENTER).pos(40,40,RIGHT,TOP).animate({
+      props:{alpha:1},
+      wait:.2,
+      time:.5,
+   });
+
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                      popUp1.animate({
+      props:{y:1478},
+      wait:.2,
+      time:.5,
+   });
+
+   closeButton.animate({
+      props:{alpha:0},
+      wait:.2,
+      time:.5,
+   });
+                     
+                  })
+
+      S.update();
+    //   page2();
+   }
+})
+                }
+
+
+          // School1();
+
+              
+
+                function School2(){
+                    const bg3 = new Pic("assets/bg4.png").addTo(); // assuming loaded in Frame
+                    const bg4Logo =new Pic("assets/bg4Logo.png").pos(420,320,RIGHT,TOP).reg(100,160)
+                    .animate({
+   props:{scale:1.2},
+   rewind:true,
+   loop:true
+})
+
+
+                    const SheridanCollege = new Pic("assets/SheridanCollege.png").pos(20,20,LEFT,TOP);
+                const robot= new Sprite({json:"robotJson.json"}) 
+        .run({
+            time:3,
+            loop:true
+        }).sca(.5).reg(CENTER).pos(420,100,LEFT,BOTTOM);
+
+        logoAnimate.pos(10,10,LEFT,BOTTOM).top().on("click", function() {
+         new Aud("assets/clickMusic.mp3").play();
+   zgo("https://ashleyimm.com/maplepath/robot/robot.html", "_blank");
+});
+
+chat.pos(10,40,LEFT,BOTTOM);
+
+                
+                const back=new Pic("assets/back.png").reg(CENTER).pos(50,50,RIGHT,BOTTOM);
+
+ 
+                back.on("click", () => {
+                  new Aud("assets/clickMusic.mp3").play();
+                    page2();
+                    S.update();
+                    });
+
+                    const boy3=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(.6).reg(CENTER).pos(180,120,LEFT,TOP).drag().top();
+        
+
+
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy3,
+   type:"keydown",
+   flip:HORIZONTAL,
+//    axis:HORIZONTAL,
+   // allow press on Scroller backings
+//    mousedownIncludes:[scroller.backing1, scroller.backing2],
+   speed:10,
+   boundary:new Boundary(0,0,W,H) 
+});
+
+
+boy3.on("click", ()=>{
+   if (boy3.hitTestBounds(robot)) {
+      new Aud("assets/clickMusic.mp3").play();
+    //   S.removeChild(robot);
+    const container = new Container(1000,700).center();
+    const talk= new Pic("assets/talkPaint.png").centerReg().addTo(container);
+    const pen3 = new Pen({penType:"city", color:[black,white,blue],nib:new Pic('assets/building.png').reg(CENTER)}).pos(-20,120,CENTER,CENTER,Container).drag().addTo(container);
+    const pen2 = new Pen({penType:"grass", color:[black,white,green],nib:new Pic('assets/grass.png').reg(CENTER)}).pos(170,190,CENTER,CENTER,Container).drag().addTo(container);
+
+    const pen = new Pen({penType:"kitetail", nib:new Pic('assets/plane.png').reg(CENTER)}).pos(-300,-100,CENTER,CENTER,Container).drag().addTo(container);
+    
+    
+
+  
+
+    
+    const closeButton=new Pic("assets/closeButton.png").sca(.7).reg(CENTER).pos(40,30,RIGHT,TOP,container);
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                     container.removeFrom();
+                     container.off();
+                     pen.off();
+                     pen.removeFrom();
+                     pen2.off();
+                     pen2.removeFrom();
+                     pen3.off();
+                     pen3.removeFrom();
+                      closeButton.removeFrom();
+                     
+                  })
+
+
+      S.update();
+    //   page2();
+   }
+
+   if (boy3.hitTestBounds(bg4Logo)) {
+    //   S.removeChild(robot);
+
+    const popUp2= new Pic("assets/sheridan.png").reg(CENTER).pos(0,1000).animate({
+      props:{y:478},
+      wait:.2,
+      time:.5,
+   });
+
+   const closeButton=new Pic("assets/closeButton.png").sca(.7).alp(0).reg(CENTER).pos(40,40,RIGHT,TOP).animate({
+      props:{alpha:1},
+      wait:.2,
+      time:.5,
+   });
+                
+   closeButton.on("click",()=>{
+      new Aud("assets/clickMusic.mp3").play();
+popUp2.animate({
+props:{y:1478},
+wait:.3,
+time:.5,
+});
+
+closeButton.animate({
+props:{alpha:0},
+wait:.3,
+time:.5,
+});
+
+})
+
+S.update();
+//   page2();
+}
+})
+                }
+               //  School2();
+
+
+
+                function School3(){
+
+                 const bg3 = new Pic("assets/bg5.png").addTo(); // assuming loaded in Frame
+                  const bg3Logo =new Pic("assets/bg5Logo.png").pos(90,430,RIGHT,TOP).sca(.9).reg(100, 100)
+                  .animate({
+   props:{scale:1.2},
+   rewind:true,
+   loop:true
+})
+
+
+                  const CentennialCollege = new Pic("assets/CentennialCollege.png").pos(20,20,LEFT,TOP);
+
+                  logoAnimate.pos(10,10,LEFT,BOTTOM).top().on("click", function() {
+                     new Aud("assets/clickMusic.mp3").play();
+   zgo("https://ashleyimm.com/maplepath/robot/robot.html", "_blank");
+});
+
+chat.pos(10,40,LEFT,BOTTOM);
+
+                  
+                const robot= new Sprite({json:"robotJson.json"}) 
+        .run({
+            time:3,
+            loop:true
+        }).sca(.5).reg(CENTER).pos(770,260,RIGHT,TOP);
+                // const boy3= new Pic("assets/boy2.png").sca(.6).pos(200,200,RIGHT,TOP);
+                const back=new Pic("assets/back.png").reg(CENTER).pos(50,50,RIGHT,BOTTOM);
+                back.on("click", () => {
+                  new Aud("assets/clickMusic.mp3").play();
+                    page2();
+
+                    S.update();
+                    });
+
+
+                    const boy3=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(.6).reg(CENTER).pos(200,200,LEFT,BOTTOM).drag().top();
+        
+
+
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy3,
+   type:"keydown",
+   flip:HORIZONTAL,
+//    axis:HORIZONTAL,
+   // allow press on Scroller backings
+//    mousedownIncludes:[scroller.backing1, scroller.backing2],
+   speed:10,
+   boundary:new Boundary(0,0,W,H) 
+});
+
+
+
+
+                
+boy3.on("click", ()=>{
+   if (boy3.hitTestBounds(robot)) {
+      new Aud("assets/clickMusic.mp3").play();
+    //   S.removeChild(robot);
+    const container = new Container(1000,700).center().sca(.8);
+    const talk= new Pic("assets/createVase.png").sca(1.4).centerReg().addTo();
+
+
+    // often need below - so consider it part of the template
+const stage = frame.stage;
+	const stageW = frame.width;
+	const stageH = frame.height;
+
+ 
+	const ornament = new Container(600, 800).center().mov(0,50);
+	
+	// make it so the ball will change colors when clicked on
+	const colors = series(yellow, yellow.darken(.5),moon,green,green.darken(.5),red,red.darken(.5),pink,purple,brown, brown.darken(.5),black,blue.darken(.5),blue);
+
+      const ball = new Circle(200, '#ff8a22').center(ornament).mov(0,50).tap(()=>{
+		ball.color = colors();
+		stage.update();
+	});
+	
+	// a container to hold all our draggable stripes
+	const stripes = new Container(stageW, stageH).center(ornament);
+
+  // const blob = new Circle({color:faint,radius:420}).center(); // this is draggable by default
+  // stripes.setMask(blob);
+	
+	// an array of the stripes
+	const patterns = [
+		new Rectangle(800, 20, red),
+		new Rectangle(800, 30, '#7ad2fd'),
+		new Rectangle(800, 10, yellow),
+		new Rectangle(800, 50, dark),
+		new Rectangle(800, 70, '#f66068'),
+		new Rectangle(800, 40, '#7ad2fd'),
+		// // type, colors, size, cols, rows, spacingH, spacingV, interval, startPaused, backgroundColor, gradient, cache
+		// pizzazz.makePattern("slants", series(green,red), 30, 100, 1, 0, 0, null, null, red).reg(0,0),
+		// pizzazz.makePattern("bling", silver, 60, 100, 1, 10).reg(0,0),
+		// pizzazz.makePattern("noise", series(purple,pink), 20, 200, 1, 0, 0).reg(0,0),
+		// pizzazz.makePattern("slants", series(green,red), 30, 100, 1, 0, 0, null, null, red).sca(-1,1).reg(0,0),
+		// pizzazz.makePattern("dots", series(green,red), 20, 100, 1, 5, 0, null, null, red).reg(0,0),
+		new Squiggle({
+			color:white, 
+			thickness:6, 
+			points:40, 
+			length:800,
+			interactive:false
+		}).expand(0),
+    
+      pizzazz.makePattern("dots", series('#fb4758',yellow), 20, 18, 1, 5, 0, null, null, red).reg(0,0),
+	];
+
+ 
+
+//  const blob = new Circle({color:faint,radius:420,borderColor:black,borderWidth:10}).center(); // this is draggable by default
+//   stripes.setMask(blob);
+	
+	// loop through, randomly place and drag the stripes 
+	loop(patterns, stripe=>{
+		loop(2, i=>{ // make two of each
+			stripe
+				.clone()
+				.pos(0, rand(stageH-stripe.height), CENTER, TOP, stripes)
+				.drag(new Boundary(560,200,0,600));
+			if (stripe.type != "Squiggle") stripe.cache();
+		})		
+	})
+	
+	// The ring will offset the ornament
+	const ring = new Circle(270, clear, '#2f0d10', 140).loc(ball, null, ornament)
+	
+	const gradient = new Circle(200, new RadialColor([grey, white],[1,.3], 0,0,0, 50,-50,200))
+		.alp(.2)
+		.loc(ball, null, ornament);
+	
+	//const hoop = new Circle(40, clear, silver, 2).pos(0,-230, CENTER, CENTER, ornament).noMouse();
+  const hoop = new Pic('assets/vase.png').center(ornament).mov(0,-66).noMouse();
+	// const top = new Rectangle(80,70,new GradientColor([grey,silver,grey],[0,.65,1],0,0,80,0))
+	// 	.pos(0,-180, CENTER, CENTER, ornament).noMouse();
+	
+	// prepare the save steps
+	const loader = new Loader();
+	// const madeWith = frame.madeWith();
+	// madeWith.icon.alp(1); // usually this a little rollover thing so its start alpha is down
+	
+	const button=new Pic('assets/save.png').pos(0,370,CENTER,CENTER).tap(()=>{
+		// remove the things we do not want and add a logo
+		ring.visible = false;
+		stripes.setMask(ball);
+		// madeWith.pos(20,20,RIGHT,BOTTOM,ornament);
+		// save with the Loader
+		loader.save(ornament, "ornament"); // could save as a jpg too
+		// add the things back
+		// madeWith.removeFrom();
+		stripes.setMask(null);
+		ring.visible = true;
+	});
+	
+  stage.update(); 
+
+
+    new Circle().center().addTo(container);
+
+        
+    const closeButton=new Pic("assets/closeButton.png").reg(CENTER).sca(.7).pos(350,40,RIGHT,TOP);
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                    button.off();
+                    button.removeFrom();
+                    closeButton.off();
+                     closeButton.removeFrom();
+
+                    container.removeFrom();
+                    talk.removeFrom();
+                     
+                    ornament.removeFrom();
+                    ornament.off();
+                     pen.off();
+                     pen.removeFrom();
+                     pen2.off();
+                     pen2.removeFrom();
+                     pen3.off();
+                     pen3.removeFrom();
+
+
+                      ball.removeFrom();
+                      stripes.removeFrom();
+                      patterns.removeFrom();
+                      ring.removeFrom();
+                      gradient.removeFrom();
+                      button.removeFrom();
+                      button.off();
+                      loader.removeFrom();
+                  })
+
+
+    
+
+      S.update();
+    //   page2();
+   }
+
+   if (boy3.hitTestBounds(bg3Logo)) {
+
+
+    const popUp3= new Pic("assets/Cen.png").reg(CENTER).pos(0,1000).animate({
+      props:{y:478},
+      wait:.2,
+      time:.5,
+   });
+   const closeButton2=new Pic("assets/closeButton.png").alp(0).reg(CENTER).sca(.7).pos(40,40,RIGHT,TOP).animate({
+      props:{alpha:1},
+      wait:.2,
+      time:.5,
+   });
+   
+   closeButton2.on("click",()=>{
+      new Aud("assets/clickMusic.mp3").play();
+popUp3.animate({
+props:{y:1478},
+wait:.3,
+time:.5,
+});
+
+closeButton2.animate({
+props:{alpha:0},
+wait:.2,
+time:.5,
+});
+
+})
+
+      S.update();
+    //   page2();
+   }
+})
+
+                  }
+                  
+// School3();
+
+                  function School4(){
+
+const bg3 = new Pic("assets/bg6.png").addTo(); // assuming loaded in Frame
+const bg6Logo =new Pic("assets/bg6Logo.png").reg(300, 200).pos(460,330,RIGHT,TOP)
+.animate({
+   props:{scale:1.2},
+   rewind:true,
+   loop:true
+})
+
+const ConestogaCollege = new Pic("assets/ConestogaCollege.png").pos(20,20,LEFT,TOP);
+const robot= new Sprite({json:"robotJson.json"}) 
+        .run({
+            time:3,
+            loop:true
+        }).sca(.5).reg(CENTER).pos(870,80,LEFT,BOTTOM);
+const back=new Pic("assets/back.png").reg(CENTER).pos(50,50,RIGHT,BOTTOM);
+back.on("click", () => {
+   new Aud("assets/clickMusic.mp3").play();
+  page2();
+  S.update();
+  });
+
+  logoAnimate.pos(10,10,LEFT,BOTTOM).top().on("click", function() {
+   new Aud("assets/clickMusic.mp3").play();
+   zgo("https://ashleyimm.com/maplepath/robot/robot.html", "_blank");
+});
+
+chat.pos(10,40,LEFT,BOTTOM);
+
+
+  const boy3=new Sprite({json:"s.json"}) 
+        .run({
+            time:1,
+            loop:true
+        }).sca(.6).reg(CENTER).pos(400,80,LEFT,TOP).drag().top();
+        
+
+
+
+
+// control position of ball with MotionController
+new MotionController({
+   target:boy3,
+   type:"keydown",
+   flip:HORIZONTAL,
+   speed:10,
+   boundary:new Boundary(0,0,W,H) 
+});
+
+
+boy3.on("click", ()=>{
+if (boy3.hitTestBounds(robot)) {
+   new Aud("assets/clickMusic.mp3").play();
+//   S.removeChild(robot);
+const talk= new Pic("assets/talkPerform.png").centerReg();
+const stage = frame.stage;
+	const stageW = frame.width;
+	const stageH = frame.height;
+
+  const italy=new Pic('assets/italy.png').pos(990,520);
+  const india =new Pic('assets/india.png').pos(990,280);
+  const greek =new Pic('assets/greek.png').pos(640,280);
+  const korean =new Pic('assets/korean.png').pos(640,520);
+  
+  const rect = new Rectangle(303, 218, '#ff483f')
+		.pos(640,280);
+    const greekTitle =new Pic('assets/greekTitle.png').center(rect);
+    const rect2 = new Rectangle(303, 218, '#ff9525')
+		.pos(990,280);
+    const indianTitle =new Pic('assets/indianTitle.png').center(rect2);
+    const rect3 = new Rectangle(303, 218, '#b9d695')
+		.pos(640,520);
+    const KoreanTitle =new Pic('assets/KoreanTitle.png').center(rect3);
+    const rect4 = new Rectangle(303, 218, '#ed5a18')
+		.pos(990,520);
+    const ItalianTitle =new Pic('assets/ItalianTitle.png').center(rect4);
+
+    
+    rect.on("click", ()=>{
+      new Aud("assets/clickMusic.mp3").play();
+    rect.animate({
+			props:{scaleY:.03}, // animate to small (at 0 emitter shows underneath)
+			wait:.2,
+			time:1,
+			ease:"quadIn",
+			call:()=>{
+				// emitter.pauseEmitter(true); 
+				rect.removeFrom();
+			}
+		});
+});
+
+  
+rect2.on("click", ()=>{
+   new Aud("assets/clickMusic.mp3").play();
+	
+  rect2.animate({
+    props:{scaleY:.03}, // animate to small (at 0 emitter shows underneath)
+    wait:.2,
+    time:1,
+    ease:"quadIn",
+    call:()=>{
+      // emitter.pauseEmitter(true); 
+      rect2.removeFrom();
+    }
+  });
+});
+
+  
+rect3.on("click", ()=>{
+   new Aud("assets/clickMusic.mp3").play();
+  rect3.animate({
+    props:{scaleY:.03}, // animate to small (at 0 emitter shows underneath)
+    wait:.2,
+    time:1,
+    ease:"quadIn",
+    call:()=>{
+      // emitter.pauseEmitter(true); 
+      rect3.removeFrom();
+    }
+  });
+});
+
+  
+rect4.on("click", ()=>{
+   new Aud("assets/clickMusic.mp3").play();
+  rect4.animate({
+    props:{scaleY:.03}, // animate to small (at 0 emitter shows underneath)
+    wait:.2,
+    time:1,
+    ease:"quadIn",
+    call:()=>{
+      // emitter.pauseEmitter(true); 
+      rect4.removeFrom();
+    }
+  });
+});
+
+S.update();
+
+
+const closeButton=new Pic("assets/closeButton.png").reg(CENTER).sca(.7).pos(520,170,RIGHT,TOP);
+                  closeButton.on("click",()=>{
+                     new Aud("assets/clickMusic.mp3").play();
+                    italy.removeFrom();
+                    india.removeFrom();
+                    greek.removeFrom();
+                    korean.removeFrom();
+                    talk.removeFrom();
+                      closeButton.off();
+                      closeButton.removeFrom();
+                      rect.removeFrom();
+                      rect2.removeFrom();
+                      rect3.removeFrom();
+                      rect4.removeFrom();
+                     
+                  })
+
+
+//   page2();
+}
+
+
+if (boy3.hitTestBounds(bg6Logo)) {
+
+    const popUp4= new Pic("assets/Const.png").reg(CENTER).pos(0,1000).animate({
+      props:{y:478},
+      wait:.2,
+      time:.5,
+   });
+
+   const closeButton=new Pic("assets/closeButton.png").alp(0).reg(CENTER).sca(.7).pos(40,40,RIGHT,TOP).animate({
+      props:{alpha:1},
+      wait:.2,
+      time:.5,
+   });
+   
+   closeButton.on("click",()=>{
+      new Aud("assets/clickMusic.mp3").play();
+
+popUp4.animate({
+props:{y:1478},
+wait:.2,
+time:.5,
+});
+
+closeButton.animate({
+props:{alpha:0},
+wait:.2,
+time:.5,
+});
+
+})
+
+      S.update();
+    //   page2();
+   }
+
+})
+
+}
+
+// School4();
+
+
+	
+
+            } // end ready
+        </script>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+    </head>
+    <body>
+      
+      <script>
+     
+
+             var animationData = {"v":"5.12.2","fr":25,"ip":0,"op":75,"w":1280,"h":720,"nm":"robot 3","ddd":0,"assets":[{"id":"image_0","w":61,"h":53,"u":"images/","p":"img_0.png","e":0},{"id":"image_1","w":186,"h":24,"u":"images/","p":"img_1.png","e":0},{"id":"image_2","w":141,"h":53,"u":"images/","p":"img_2.png","e":0},{"id":"image_3","w":150,"h":134,"u":"images/","p":"img_3.png","e":0},{"id":"image_4","w":345,"h":235,"u":"images/","p":"img_4.png","e":0},{"id":"image_5","w":247,"h":196,"u":"images/","p":"img_5.png","e":0},{"id":"image_6","w":91,"h":96,"u":"images/","p":"img_6.png","e":0},{"id":"comp_0","nm":"head","fr":25,"layers":[{"ddd":0,"ind":1,"ty":2,"nm":"图层 14","refId":"image_1","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[621.965,360.169,0],"ix":2,"l":2},"a":{"a":0,"k":[92.806,11.707,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":134,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":2,"nm":"eyes","refId":"image_2","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[622.246,324.084,0],"ix":2,"l":2},"a":{"a":0,"k":[70.385,26.011,0],"ix":1,"l":2},"s":{"a":1,"k":[{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":0,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":14,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":18,"s":[100,25,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":22,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":62,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":66,"s":[100,25,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":70,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":115,"s":[100,100,100]},{"i":{"x":[0.833,0.833,0.833],"y":[0.833,0.833,0.833]},"o":{"x":[0.167,0.167,0.167],"y":[0.167,0.167,0.167]},"t":119,"s":[100,25,100]},{"t":123,"s":[100,100,100]}],"ix":6,"l":2}},"ao":0,"ip":0,"op":134,"st":0,"bm":0},{"ddd":0,"ind":3,"ty":2,"nm":"leave","refId":"image_3","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":6,"s":[11.4]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":16,"s":[-62.553]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":26,"s":[11.4]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":84,"s":[11.4]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":94,"s":[-62.553]},{"t":104,"s":[11.4]}],"ix":10},"p":{"a":1,"k":[{"i":{"x":0.833,"y":0.833},"o":{"x":0.167,"y":0.167},"t":6,"s":[686.3,125.701,0],"to":[-14.333,0,0],"ti":[0,0,0]},{"i":{"x":0.833,"y":0.833},"o":{"x":0.167,"y":0.167},"t":16,"s":[600.3,125.701,0],"to":[0,0,0],"ti":[-14.333,0,0]},{"i":{"x":0.833,"y":0.833},"o":{"x":0.167,"y":0.167},"t":26,"s":[686.3,125.701,0],"to":[0,0,0],"ti":[0,0,0]},{"i":{"x":0.833,"y":0.833},"o":{"x":0.167,"y":0.167},"t":84,"s":[686.3,125.701,0],"to":[-14.333,0,0],"ti":[0,0,0]},{"i":{"x":0.833,"y":0.833},"o":{"x":0.167,"y":0.167},"t":94,"s":[600.3,125.701,0],"to":[0,0,0],"ti":[-14.333,0,0]},{"t":104,"s":[686.3,125.701,0]}],"ix":2,"l":2},"a":{"a":0,"k":[74.643,66.726,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":134,"st":0,"bm":0},{"ddd":0,"ind":4,"ty":2,"nm":"图层 17","refId":"image_4","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[622.262,324.734,0],"ix":2,"l":2},"a":{"a":0,"k":[172.373,117.401,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":134,"st":0,"bm":0}]}],"layers":[{"ddd":0,"ind":1,"ty":2,"nm":"图层 13","refId":"image_0","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[622.824,500.294,0],"ix":2,"l":2},"a":{"a":0,"k":[30.253,26.028,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":0,"nm":"head","refId":"comp_0","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":0,"s":[0]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":10,"s":[13]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":28,"s":[-13]},{"t":40,"s":[0]}],"ix":10},"p":{"a":0,"k":[640,360,0],"ix":2,"l":2},"a":{"a":0,"k":[640,360,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"w":1280,"h":720,"ip":0,"op":137,"st":0,"bm":0},{"ddd":0,"ind":3,"ty":2,"nm":"图层 18","refId":"image_5","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[656.224,520.322,0],"ix":2,"l":2},"a":{"a":0,"k":[123.21,97.981,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":75,"st":0,"bm":0},{"ddd":0,"ind":4,"ty":2,"nm":"图层 19","refId":"image_6","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":1,"k":[{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":0,"s":[0]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":9,"s":[64]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":12,"s":[39]},{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"t":15,"s":[64]},{"t":23,"s":[0]}],"ix":10},"p":{"a":0,"k":[537.466,427.979,0],"ix":2,"l":2},"a":{"a":0,"k":[83.5,7.6,0],"ix":1,"l":2},"s":{"a":0,"k":[100,100,100],"ix":6,"l":2}},"ao":0,"ip":0,"op":75,"st":0,"bm":0}],"markers":[],"props":{}};
+    var params = {
+        container: document.getElementById('lottie'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: animationData
+    };
+
+    var anim;
+
+    anim = lottie.loadAnimation(params);
+
+
+
+         </script>
+    </body>
+</html>
